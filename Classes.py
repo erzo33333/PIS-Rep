@@ -11,23 +11,29 @@ class Product:
 class Item:
     def __init__(self, name: str, date: str, amount:int):
         self.name = name
-        self.date = date
         self.amount = amount
+        self.date = date
 
     def __str__(self):
         return f'Название: {self.name}, Дата:{self.date}, Количество:{self.amount}'
 
 
 class Potato(Product):
-    def __init__(self, name, amount, date, variety):
+    def __init__(self, name, variety, amount, date):
         super().__init__(name, amount, date)
         self.variety = variety
 
+    def __str__(self):
+        return f'Название: {self.name}, Сорт:{self.variety}, Дата:{self.date}, Количество:{self.amount}'
+
 
 class Carrot(Product):
-    def __init__(self, name, amount, date, length):
+    def __init__(self, name, length, amount, date):
         super().__init__(name, amount, date)
         self.length = length
+
+    def __str__(self):
+        return f'Название: {self.name}, Длина:{self.length}, Дата:{self.date}, Количество:{self.amount}'
 
 
 class Point():
