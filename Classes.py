@@ -18,6 +18,18 @@ class Item:
         return f'Название: {self.name}, Дата:{self.date}, Количество:{self.amount}'
 
 
+class Potato(Product):
+    def __init__(self, name, amount, date, variety):
+        super().__init__(name, amount, date)
+        self.variety = variety
+
+
+class Carrot(Product):
+    def __init__(self, name, amount, date, length):
+        super().__init__(name, amount, date)
+        self.length = length
+
+
 class Point():
     def __init__(self, x, y):
         self.x = x
