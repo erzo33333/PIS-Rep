@@ -36,6 +36,15 @@ class Carrot(Product):
         return f'Название: {self.name}, Длина:{self.length}, Дата:{self.date}, Количество:{self.amount}'
 
 
+class Berry(Item):
+    def __init__(self, name, size, amount, date):
+        super().__init__(name, date, amount)
+        self.size = size
+
+    def __str__(self):
+        return f'Название: {self.name}, Дата:{self.date}, Количество: {self.amount}, Размер:{self.size}'
+
+
 class Point():
     def __init__(self, x, y):
         self.x = x
