@@ -36,7 +36,7 @@ def Berry_splitting():
     berrylist = [berryline.rstrip().split(' ') for berryline in open("BerryList.txt", encoding="utf-8").readlines()]
 
     allBerry = [Berry(name=line[0], date=line[1], amount=line[2], size=line[3]) for line in berrylist]
-    allBerryString = "\n  Список моркови:"
+    allBerryString = "\n  Список Ягод:"
     for berry in allBerry:
         allBerryString += f"\n{berry}"
 
