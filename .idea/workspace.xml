@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ffc8d09e-922e-4d64-b80b-720f73fd0076" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CarrotList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CarrotList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PotatoList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/PotatoList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProductList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProductList.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.py" beforeDir="false" afterPath="$PROJECT_DIR$/Program.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,18 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "erzo33333"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;erzo33333&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:erzo33333/PIS-Rep.git",
-    "accountId": "d9aff8b6-dc12-4d9e-af04-2c230c55900c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:erzo33333/PIS-Rep.git&quot;,
+    &quot;accountId&quot;: &quot;d9aff8b6-dc12-4d9e-af04-2c230c55900c&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -50,7 +53,7 @@
     "Python.Product.executor": "Run",
     "Python.Program.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "second",
+    "git-widget-placeholder": "addprop",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>

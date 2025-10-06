@@ -1,11 +1,12 @@
 class Product:
-    def __init__(self, name, amount, date):
+    def __init__(self, name, amount, date, calories):
         self.name = name
         self.date = date
         self.amount = amount
+        self.calories = calories
 
     def __str__(self):
-        return f'Название: {self.name}, Дата:{self.date}, Количество:{self.amount}'
+        return f'Название: {self.name}, Дата:{self.date}, Количество:{self.amount}, Калорийность: {self.calories}'
 
 
 class Item:
@@ -19,21 +20,21 @@ class Item:
 
 
 class Potato(Product):
-    def __init__(self, name, variety, amount, date):
-        super().__init__(name, amount, date)
+    def __init__(self, name, variety, amount, date, calories):
+        super().__init__(name, amount, date, calories)
         self.variety = variety
 
     def __str__(self):
-        return f'Название: {self.name}, Сорт:{self.variety}, Дата:{self.date}, Количество:{self.amount}'
+        return f'Название: {self.name}, Сорт:{self.variety}, Дата:{self.date}, Количество:{self.amount}, Калорийность: {self.calories}'
 
 
 class Carrot(Product):
-    def __init__(self, name, length, amount, date):
-        super().__init__(name, amount, date)
+    def __init__(self, name, length, amount, date, calories):
+        super().__init__(name, amount, date, calories)
         self.length = length
 
     def __str__(self):
-        return f'Название: {self.name}, Длина:{self.length}, Дата:{self.date}, Количество:{self.amount}'
+        return f'Название: {self.name}, Длина:{self.length}, Дата:{self.date}, Количество:{self.amount}, Калорийность: {self.calories}'
 
 
 class Point():

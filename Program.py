@@ -3,7 +3,7 @@ from Classes import Product, Item, Rectangle, Point, Potato, Carrot
 def Prooduct_splitting():
     prodlist = [prodline.rstrip().split(' ') for prodline in open("ProductList.txt", encoding="utf-8").readlines()]
 
-    allProducts = [Product(name=line[0], date=line[1], amount=line[2]) for line in prodlist]
+    allProducts = [Product(name=line[0], date=line[1], amount=line[2], calories=line[3]) for line in prodlist]
     allProductsString = "\n  Список продуктов:"
     for product in allProducts:
         allProductsString += f"\n{product}"
@@ -14,7 +14,7 @@ def Prooduct_splitting():
 def Potato_splitting():
     potatolist = [potatoline.rstrip().split(' ') for potatoline in open("PotatoList.txt", encoding="utf-8").readlines()]
 
-    allPotato = [Potato(name=line[0], variety=line[1], date=line[2], amount=line[3]) for line in potatolist]
+    allPotato = [Potato(name=line[0], variety=line[1], date=line[2], amount=line[3], calories=line[4]) for line in potatolist]
     allPotatoString = "\n  Список картошки:"
     for potato in allPotato:
         allPotatoString += f"\n{potato}"
@@ -24,7 +24,7 @@ def Potato_splitting():
 def Carrot_splitting():
     carrotlist = [carrotline.rstrip().split(' ') for carrotline in open("CarrotList.txt", encoding="utf-8").readlines()]
 
-    allCarrot = [Carrot(name=line[0], length=line[1], date=line[2], amount=line[3]) for line in carrotlist]
+    allCarrot = [Carrot(name=line[0], length=line[1], date=line[2], amount=line[3], calories=line[4]) for line in carrotlist]
     allCarrotString = "\n  Список моркови:"
     for carrot in allCarrot:
         allCarrotString += f"\n{carrot}"
