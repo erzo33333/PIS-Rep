@@ -1,4 +1,4 @@
-from Classes import Product, Item, Rectangle, Point, Potato, Carrot
+from Classes import Product, Item, Rectangle, Point, Potato, Carrot, Berry
 
 def Prooduct_splitting():
     prodlist = [prodline.rstrip().split(' ') for prodline in open("ProductList.txt", encoding="utf-8").readlines()]
@@ -32,10 +32,21 @@ def Carrot_splitting():
     print(allCarrotString)
 
 
+def Berry_splitting():
+    berrylist = [berryline.rstrip().split(' ') for berryline in open("BerryList.txt", encoding="utf-8").readlines()]
+
+    allBerry = [Berry(name=line[0], date=line[1], amount=line[2], size=line[3]) for line in berrylist]
+    allBerryString = "\n  Список моркови:"
+    for berry in allBerry:
+        allBerryString += f"\n{berry}"
+
+    print(allBerryString)
+
+
 Prooduct_splitting()
 Potato_splitting()
 Carrot_splitting()
-
+Berry_splitting()
 
 
 # def task1():
