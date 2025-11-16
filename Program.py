@@ -1,70 +1,85 @@
-from Classes import Product, Item, Rectangle, Point, Potato, Carrot, Berry
+from Classes import Product, Item, Potato, Carrot, Berry
 
-def Prooduct_splitting():
-    prodlist = [prodline.rstrip().split(' ') for prodline in open("ProductList.txt", encoding="utf-8").readlines()]
+ProductList = [{'name': "Баклажан", 'date':"01.11.2025", 'amount':135, 'calories':50},
+               {'name': "Фейхоа", 'date':"01.11.2025", 'amount':3, 'calories':59},
+               {'name': "Огурец", 'date':"08.11.2025", 'amount':320, 'calories':15}]
 
-    allProducts = [Product(name=line[0], date=line[1], amount=line[2], calories=line[3]) for line in prodlist]
-    allProductsString = "\n  Список продуктов:"
-    for product in allProducts:
-        allProductsString += f"\n{product}"
+PotatoList = [{'name': "Красная картошка", 'isdirty':True, 'date':"04.09.2025", 'amount':250, 'calories':70},
+              {'name': "Белая картошка", 'isdirty':False, 'date':"03.09.2025", 'amount':300, 'calories':77},
+              {'name': "Синяя картошка", 'isdirty':None, 'date':"22.10.2025", 'amount':50, 'calories':80}]
+
+CarrotList = [{'name': "Анастасия", 'length':23, 'date':"30.08.2025", 'amount':140, 'calories':40},
+              {'name': "Московская Зимняя", 'length':14, 'date':"17.09.2025", 'amount':100, 'calories':39},
+              {'name': "Самсон", 'length':20, 'date':"11.10.2025", 'amount':97, 'calories':42}]
+
+BerryList = [{'name': "Арбуз", 'size':37, 'date':"07.08.2025", 'amount':104},
+             {'name': "Малина", 'size':1, 'date':"24.08.2025", 'amount':22},
+             {'name': "Банан", 'size':20, 'date':"29.08.2025", 'amount':95}]
+
+
+def Prooduct_Parsing():
+    """
+    Функция разделения неклассифицированных продуктов из текстового файла и вывода их в консоль
+    """
+    pl = ProductList
+    allProducts = []
+    allProductsString = "\n  Список добавленных продуктов:"
+
+    for product in pl:
+        newobj = Product(name=product['name'], date=product['date'], amount=product['amount'], calories=product['calories'])
+        allProducts.append(newobj)
+        allProductsString += f"\n{newobj}"
 
     print(allProductsString)
 
 
-def Potato_splitting():
-    potatolist = [potatoline.rstrip().split(' ') for potatoline in open("PotatoList.txt", encoding="utf-8").readlines()]
+def Potato_Parsing():
+    """
+    Функция десериализации картофеля из списка словарей в объекты и вывод их в консоль
+    """
+    pl = PotatoList
+    allPotato = []
+    allPotatoString = "\n  Список добавленной картошки:"
 
-    allPotato = [Potato(name=line[0], variety=line[1], date=line[2], amount=line[3], calories=line[4]) for line in potatolist]
-    allPotatoString = "\n  Список картошки:"
-    for potato in allPotato:
-        allPotatoString += f"\n{potato}"
+    for potato in pl:
+        newobj = Potato(name=potato['name'], isdirty=potato['isdirty'], date=potato['date'], amount=potato['amount'], calories=potato['calories'])
+        allPotato.append(newobj)
+        allPotatoString += f"\n{newobj}"
 
     print(allPotatoString)
 
-def Carrot_splitting():
-    carrotlist = [carrotline.rstrip().split(' ') for carrotline in open("CarrotList.txt", encoding="utf-8").readlines()]
+def Carrot_Parsing():
+    """
+    Функция разделения моркови из текстового файла и вывода её в консоль
+    """
+    cl = CarrotList
+    allCarrot = []
+    allCarrotString = "\n  Список добавленной моркови:"
 
-    allCarrot = [Carrot(name=line[0], length=line[1], date=line[2], amount=line[3], calories=line[4]) for line in carrotlist]
-    allCarrotString = "\n  Список моркови:"
-    for carrot in allCarrot:
-        allCarrotString += f"\n{carrot}"
+    for carrot in cl:
+        newobj = Carrot(name=carrot['name'], length=carrot['length'], date=carrot['date'], amount=carrot['amount'], calories=carrot['calories'])
+        allCarrot.append(newobj)
+        allCarrotString += f"\n{newobj}"
 
     print(allCarrotString)
 
 
-def Berry_splitting():
-    berrylist = [berryline.rstrip().split(' ') for berryline in open("BerryList.txt", encoding="utf-8").readlines()]
+def Berry_Parsing():
+    """
+    Функция разделения ягод из текстового файла и вывода их в консоль
+    """
+    bl = BerryList
+    allBerry = []
+    allBerryString = "\n  Список добавленных ягод:"
 
-    allBerry = [Berry(name=line[0], date=line[1], amount=line[2], size=line[3]) for line in berrylist]
-    allBerryString = "\n  Список Ягод:"
-    for berry in allBerry:
-        allBerryString += f"\n{berry}"
+    for berry in bl:
+        newobj = Berry(name=berry['name'], size=berry['size'], date=berry['date'], amount=berry['amount'])
+        allBerry.append(newobj)
+        allBerryString += f"\n{newobj}"
 
     print(allBerryString)
 
-
-Prooduct_splitting()
-Potato_splitting()
-Carrot_splitting()
-Berry_splitting()
-
-
-# def task1():
-#
-#     rectangle1 = Rectangle(point1=Point(12, 11),
-#                            point2=Point(7, 23))
-#
-#     rectangle2 = Rectangle(point1=Point(4, 13),
-#                            point2=Point(8, 10))
-#
-#     new_min_x = min(rectangle1.point1.x, rectangle1.point2.x)
-#     new_min_y = min(rectangle1.point1.y, rectangle1.point2.y)
-#     new_max_x = max(rectangle1.point1.x, rectangle1.point2.x)
-#     new_max_y = max(rectangle1.point1.y, rectangle1.point2.y)
-#
-#     rectangle1.point1 = Point(new_min_x, new_min_y)
-#     rectangle1.point2 = Point(new_max_x, new_max_y)
-#
-#     #далее код не дописан 🤷‍♂️
-#
-# task1()
+Prooduct_Parsing()
+Potato_Parsing()
+Carrot_Parsing()
+Berry_Parsing()
