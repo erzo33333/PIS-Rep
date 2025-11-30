@@ -1,8 +1,24 @@
+from errors import *
+from validation import *
+
+class Shop:
+    def __init__(self):
+        self.goods = []
+
+    def __str__(self):
+        return self.goods
+
 class Product:
     """
     Основной класс, отвечающий за неклассифицированные продукты
     """
     def __init__(self, name, amount, date, calories):
+        
+        validate_name(name)
+        validate_amount(amount)
+        validate_date(date)
+        validate_calories(calories)
+
         self.name = name
         self.date = date
         self.amount = amount
@@ -14,9 +30,14 @@ class Product:
 
 class Item:
     """
-    Класс, дублирующий Product
+    Класс, дублирующий старую версию Product
     """
-    def __init__(self, name: str, date: str, amount:int):
+    def __init__(self, name: str, date: str, amount):
+        
+        validate_name(name)
+        validate_amount(amount)
+        validate_date(date)
+
         self.name = name
         self.amount = amount
         self.date = date
@@ -30,6 +51,13 @@ class Potato(Product):
     Класс картошки, наслдуемый от Product
     """
     def __init__(self, name, isdirty, amount, date, calories):
+        
+        validate_name(name)
+        validate_isdirty(isdirty)
+        validate_amount(amount)
+        validate_date(date)
+        validate_calories(calories)
+
         super().__init__(name, amount, date, calories)
         self.isdirty = isdirty
 
@@ -42,6 +70,13 @@ class Carrot(Product):
     Класс моркови, наслдуемый от Product
     """
     def __init__(self, name, length, amount, date, calories):
+
+        validate_name(name)
+        validate_length(length)
+        validate_amount(amount)
+        validate_date(date)
+        validate_calories(calories)
+
         super().__init__(name, amount, date, calories)
         self.length = length
 
@@ -54,6 +89,12 @@ class Berry(Item):
     Класс ягоды, наслдуемый от Item
     """
     def __init__(self, name, size, amount, date):
+
+        validate_name(name)
+        validate_size(size)
+        validate_amount(amount)
+        validate_date(date)
+
         super().__init__(name, date, amount)
         self.size = size
 

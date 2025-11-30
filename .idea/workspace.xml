@@ -4,20 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffc8d09e-922e-4d64-b80b-720f73fd0076" name="Changes" comment="слияние + фикс">
-      <change afterPath="$PROJECT_DIR$/Exceptions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_10_2025_12_11_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_10_2025_12_11_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_10_2025_12_11__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_06_10_2025_12_11__Changes_1.xml" beforeDir="false" />
+    <list default="true" id="ffc8d09e-922e-4d64-b80b-720f73fd0076" name="Changes" comment="Упрощение кода, удаление лишних строк, работа со словарями вместо текстовых фалов">
+      <change afterPath="$PROJECT_DIR$/test_classes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_program.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Program.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BerryList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CarrotList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/Classes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PotatoList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductList.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.py" beforeDir="false" afterPath="$PROJECT_DIR$/Program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.py" beforeDir="false" afterPath="$PROJECT_DIR$/program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,22 +59,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Product.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Program.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;addprop&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for Test.test_berry_wrong_size.executor": "Run",
+    "Python tests.Python tests for Test.test_product_ok.executor": "Run",
+    "Python tests.Python tests for test_classes.test_berry_wrong_size.executor": "Run",
+    "Python tests.Python tests for test_classes.test_carrot_wrong_length.executor": "Run",
+    "Python tests.Python tests for test_classes.test_potato_wrong_isdirty.executor": "Run",
+    "Python tests.Python tests for test_classes.test_product_ok.executor": "Run",
+    "Python tests.Python tests for test_classes.test_product_wrong_amount.executor": "Run",
+    "Python tests.Python tests for test_program.test_safe_get_missing.executor": "Run",
+    "Python tests.Python tests for test_program.test_safe_get_ok.executor": "Run",
+    "Python tests.Python tests in test_program.py.executor": "Run",
+    "Python.Classes.executor": "Run",
+    "Python.Product.executor": "Run",
+    "Python.Program.executor": "Run",
+    "Python.classes.executor": "Run",
+    "Python.program.executor": "Run",
+    "Python.ttttt.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "addprop",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="Z:\Python\Projects\PIS" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Program">
-    <configuration name="Classes" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="classes" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PIS" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -91,7 +102,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="Z:\Python\Projects\PIS\Classes.py" />
+      <option name="SCRIPT_NAME" value="Z:\Python\Projects\PIS\classes.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -100,6 +111,90 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_classes.test_berry_wrong_size" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PIS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_classes.test_berry_wrong_size&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_classes.test_carrot_wrong_length" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PIS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_classes.test_carrot_wrong_length&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_classes.test_product_ok" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PIS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_classes.test_product_ok&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_program.test_safe_get_missing" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PIS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_program.test_safe_get_missing&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_program.test_safe_get_ok" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PIS" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_program.test_safe_get_ok&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_program.test_safe_get_ok" />
+        <item itemvalue="Python tests.Python tests for test_classes.test_product_ok" />
+        <item itemvalue="Python tests.Python tests for test_program.test_safe_get_missing" />
+        <item itemvalue="Python tests.Python tests for test_classes.test_berry_wrong_size" />
+        <item itemvalue="Python tests.Python tests for test_classes.test_carrot_wrong_length" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -125,7 +220,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759732493771</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Упрощение кода, удаление лишних строк, работа со словарями вместо текстовых фалов">
+      <option name="closed" value="true" />
+      <created>1763315048816</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1763315048816</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -141,6 +244,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="слияние + фикс" />
-    <option name="LAST_COMMIT_MESSAGE" value="слияние + фикс" />
+    <MESSAGE value="Упрощение кода, удаление лишних строк, работа со словарями вместо текстовых фалов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Упрощение кода, удаление лишних строк, работа со словарями вместо текстовых фалов" />
   </component>
 </project>
