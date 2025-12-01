@@ -1,38 +1,65 @@
-from errors import FieldTypeError, FieldMissingError
-from typing import Union, Dict, Type
+from pydantic import field_validator
 
-def safe_get(dic: dict, key: str):
-    """Возвращает значение или бросает ошибку, если ключа нет."""
-    if key not in dic:
-        raise FieldMissingError(f"Отсутствует обязательное поле: {key}")
-    return dic[key]
+class GeneralValidationProperties:
+    @field_validator('name', mode='before')
+    def validate_name(cls, v):
+        if isinstance(v, str) and len(v) > 0:
+            return v
+        else:
+            raise ValueError("Имя должно быть непустой строкой")
+
+    @field_validator('amount', mode='after')
+    def validate_amount(cls, v):
+        if isinstance(v, (float, int)) and v > 0:
+            return v
+        else:
+            raise ValueError("Количество товара должно быть положительным числом")
 
 
-def validate_name(name):
-    if not isinstance(name, str) or not name:
-        raise FieldTypeError("Поле 'name' должно быть непустой строкой")
+class ProductValidation(GeneralValidationProperties):
+    @field_validator('calories', mode='after')
+    def validate_calories(cls, v):
+        if isinstance(v, int) and v > 0:
+            return v
+        else:
+            raise ValueError("Калорийность должна быть целым положительным числом")
 
-def validate_amount(amount):
-    if not isinstance(amount, (int, float)) or amount < 0:
-        raise FieldTypeError("Поле 'amount' должно быть неотрицательным числом")
 
-def validate_date(date):
-    # Улучшаем валидацию: не только длина, но и тип.
-    if not isinstance(date, str) or len(date) != 10:
-        raise FieldTypeError("Поле 'date' должно быть строкой в корректном формате")
+class PotatoValidation(GeneralValidationProperties):
+    @field_validator('calories', mode='after')
+    def validate_calories(cls, v):
+        if isinstance(v, int) and v > 0:
+            return v
+        else:
+            raise ValueError("Калорийность должна быть целым положительным числом")
 
-def validate_calories(calories):
-    if not isinstance(calories, int) or calories < 0:
-        raise FieldTypeError("Поле 'calories' должно быть неотрицательным целым числом")
+    @field_validator('isdirty', mode='after')
+    def validate_isdirty(cls, v):
+        if isinstance(v, bool):
+            return v
+        else:
+            raise ValueError("Показатель грязи должен быть True, False")
 
-def validate_length(length):
-    if not isinstance(length, int) or length <= 0:
-        raise FieldTypeError("Поле 'length' (длина) должно быть положительным целым числом")
 
-def validate_isdirty(isdirty):
-    if not isinstance(isdirty, bool):
-        raise FieldTypeError("Поле 'isdirty' (грязь) должно быть булевым значением")
+class CarrotValidation(GeneralValidationProperties):
+    @field_validator('calories', mode='after')
+    def validate_calories(cls, v):
+        if isinstance(v, int) and v > 0:
+            return v
+        else:
+            raise ValueError("Калорийность должна быть целым положительным числом")
 
-def validate_size(size):
-    if not isinstance(size, int) or size <= 0:
-        raise FieldTypeError("Поле 'size' (размер) должно быть положительным целым числом")
+    @field_validator('length', mode='after')
+    def validate_length(cls, v):
+        if isinstance(v, int):
+            return v
+        else:
+            raise ValueError("Длина должа быть целым положительным числом")
+
+class BerryValidation(GeneralValidationProperties):
+    @field_validator('size', mode='after')
+    def validate_size(cls, v):
+        if isinstance(v, int) and v > 0:
+            return v
+        else:
+            raise ValueError("Размер должен быть целым положительным числом")

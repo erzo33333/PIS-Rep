@@ -4,17 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ffc8d09e-922e-4d64-b80b-720f73fd0076" name="Changes" comment="Упрощение кода, удаление лишних строк, работа со словарями вместо текстовых фалов">
-      <change afterPath="$PROJECT_DIR$/test_classes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_program.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Program.xml" beforeDir="false" />
+    <list default="true" id="ffc8d09e-922e-4d64-b80b-720f73fd0076" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Exceptions.py" beforeDir="false" afterPath="$PROJECT_DIR$/errors.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.py" beforeDir="false" afterPath="$PROJECT_DIR$/program.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/logic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/.README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logic.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/program.py" beforeDir="false" afterPath="$PROJECT_DIR$/program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_classes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_program.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_program.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/validation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +66,12 @@
     "Python tests.Python tests for test_classes.test_potato_wrong_isdirty.executor": "Run",
     "Python tests.Python tests for test_classes.test_product_ok.executor": "Run",
     "Python tests.Python tests for test_classes.test_product_wrong_amount.executor": "Run",
+    "Python tests.Python tests for test_program.TestErrorHandling.executor": "Run",
+    "Python tests.Python tests for test_program.TestErrorHandling.test_value_error_handling.executor": "Run",
+    "Python tests.Python tests for test_program.TestIntegration.executor": "Run",
+    "Python tests.Python tests for test_program.TestIntegration.test_complete_workflow.executor": "Run",
+    "Python tests.Python tests for test_program.TestShop.executor": "Run",
+    "Python tests.Python tests for test_program.TestValidation.test_berry_validation_failure.executor": "Run",
     "Python tests.Python tests for test_program.test_safe_get_missing.executor": "Run",
     "Python tests.Python tests for test_program.test_safe_get_ok.executor": "Run",
     "Python tests.Python tests in test_program.py.executor": "Run",
@@ -77,6 +81,8 @@
     "Python.classes.executor": "Run",
     "Python.program.executor": "Run",
     "Python.ttttt.executor": "Run",
+    "Python.validation.executor": "Run",
+    "Python.validtion.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "addprop",
     "settings.editor.selected.configurable": "preferences.lookFeel"
@@ -87,7 +93,7 @@
       <recent name="Z:\Python\Projects\PIS" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests in test_program.py">
     <configuration name="classes" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PIS" />
       <option name="ENV_FILES" value="" />
@@ -111,7 +117,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_classes.test_berry_wrong_size" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_program.TestErrorHandling" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PIS" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,11 +128,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_classes.test_berry_wrong_size&quot;" />
+      <option name="_new_target" value="&quot;test_program.TestErrorHandling&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_classes.test_carrot_wrong_length" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_program.TestErrorHandling.test_value_error_handling" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PIS" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -137,11 +143,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_classes.test_carrot_wrong_length&quot;" />
+      <option name="_new_target" value="&quot;test_program.TestErrorHandling.test_value_error_handling&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_classes.test_product_ok" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_program.TestIntegration" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PIS" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -152,11 +158,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_classes.test_product_ok&quot;" />
+      <option name="_new_target" value="&quot;test_program.TestIntegration&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_program.test_safe_get_missing" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_program.TestIntegration.test_complete_workflow" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PIS" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -167,11 +173,11 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_program.test_safe_get_missing&quot;" />
+      <option name="_new_target" value="&quot;test_program.TestIntegration.test_complete_workflow&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_program.test_safe_get_ok" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_program.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PIS" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -182,17 +188,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_program.test_safe_get_ok&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test_program.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Python tests for test_program.test_safe_get_ok" />
-        <item itemvalue="Python tests.Python tests for test_classes.test_product_ok" />
-        <item itemvalue="Python tests.Python tests for test_program.test_safe_get_missing" />
-        <item itemvalue="Python tests.Python tests for test_classes.test_berry_wrong_size" />
-        <item itemvalue="Python tests.Python tests for test_classes.test_carrot_wrong_length" />
+        <item itemvalue="Python tests.Python tests in test_program.py" />
+        <item itemvalue="Python tests.Python tests for test_program.TestErrorHandling" />
+        <item itemvalue="Python tests.Python tests for test_program.TestErrorHandling.test_value_error_handling" />
+        <item itemvalue="Python tests.Python tests for test_program.TestIntegration.test_complete_workflow" />
+        <item itemvalue="Python tests.Python tests for test_program.TestIntegration" />
       </list>
     </recent_temporary>
   </component>
@@ -228,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1763315048816</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Промежуточное нерабочее решение">
+      <option name="closed" value="true" />
+      <created>1764509073499</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764509073499</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -245,6 +259,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="слияние + фикс" />
     <MESSAGE value="Упрощение кода, удаление лишних строк, работа со словарями вместо текстовых фалов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Упрощение кода, удаление лишних строк, работа со словарями вместо текстовых фалов" />
+    <MESSAGE value="Промежуточное нерабочее решение" />
+    <option name="LAST_COMMIT_MESSAGE" value="Промежуточное нерабочее решение" />
   </component>
 </project>

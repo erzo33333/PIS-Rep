@@ -1,48 +1,98 @@
-from classes import Product, Potato, Carrot, Berry
-from logic import *
+from classes import Product, Potato, Carrot, Berry, Shop
 import os
+from keyboard import wait
+from msvcrt import getch
 
 shop = Shop()
 
-shop_acceptance_list = []
+ProductList = [{'name': "Баклажан", 'amount':10, 'calories':50},
+               {'name': "Фейхоа", 'amount':3, 'calories':59},
+               {'name': "Огурец", 'amount':320, 'calories':15}]
 
-ProductList = [{'name': "Баклажан", 'date':"01.11.2025", 'amount':10, 'calories':50},
-               {'name': "Фейхоа", 'date':"01.11.2025", 'amount':3, 'calories':59},
-               {'name': "Огурец", 'date':"08.11.2025", 'amount':320, 'calories':15}]
+PotatoList = [{'name': "Красная картошка",'isdirty':True, 'amount':250, 'calories':70},
+              {'name': "Белая картошка", 'isdirty':False, 'amount':300, 'calories':77},
+              {'name': "Синяя картошка", 'isdirty':False, 'amount':50, 'calories':80}]
 
-PotatoList = [{'name': "Красная картошка",'isdirty':True, 'date':"04.09.2025", 'amount':250, 'calories':70},
-              {'name': "Белая картошка", 'isdirty':False, 'date':"03.09.2025", 'amount':300, 'calories':77},
-              {'name': "Синяя картошка", 'isdirty':None, 'date':"22.10.2025", 'amount':50, 'calories':80}]
+CarrotList = [{'name': "Анастасия", 'length':23, 'amount':140, 'calories':40},
+              {'name': "Московская Зимняя", 'length':14, 'amount':100, 'calories':39},
+              {'name': "Самсон", 'length':20, 'amount':97, 'calories':42}]
 
-CarrotList = [{'name': "Анастасия", 'length':23, 'date':"30.08.2025", 'amount':140, 'calories':40},
-              {'name': "Московская Зимняя", 'length':14, 'date':"17.09.2025", 'amount':100, 'calories':39},
-              {'name': "Самсон", 'length':20, 'date':"11.10.2025", 'amount':97, 'calories':42}]
-
-BerryList = [{'name': "Арбуз", 'size':37, 'date':"07.08.2025", 'amount':104},
-             {'name': "Малина", 'size':1, 'date':"24.08.2025", 'amount':22},
-             {'name': "Банан", 'size':20, 'date':"29.08.2025", 'amount':95}]
+BerryList = [{'name': "Арбуз", 'size':37, 'amount':104},
+             {'name': "Малина", 'size':1, 'amount':22},
+             {'name': "Банан", 'size':20, 'amount':95}]
 
 
-while True:
+
+run = True
+while run:
     os.system('cls')
-    case = input('1. Добавить продукт\n'
-                 '2. Добавить готовый список продуктов\n'
-                 '3. Посмотреть список проуктов\n'
-                 'Выберите действие: ')
-    print('\n')
+    chose = input('Выберете действие:\n'
+          '1. Добавить товар\n'
+          '2. Удалить товар\n'
+          '3. Посмотреть список товаров\n'
+          '0. Завершить работу\n')
 
-    if case == '1':
-        type = input('1. Картофель\n'
-                     '2. Морковь\n'
-                     '3. Ягоды\n'
-                     '4. Другой продукт\n'
-                     'Выберите тип продукта для добавления: ')
+    match (chose):
+        case '1':
+            try:
+                addtype = input('Введите тип товара для добавления:\n'
+                                '1. Картофель\n'
+                                '2. Морковь\n'
+                                '3. Ягода\n'
+                                '* Другое\n')
 
-    elif case == '2':
-        print(222)
+                if addtype == '1':
+                    addname = input('Название: ')
+                    addamount = input('Количество: ')
+                    addisdirty = input('Грязь: ')
+                    addcalories = input('Калорийность: ')
+                    shop.AddItem(addtype, name=addname, amount=addamount, calories=addcalories, isdirty=addisdirty)
 
-    elif case == '3':
-        print(333)
+                elif addtype == '2':
+                    addname = input('Название: ')
+                    addamount = input('Количество: ')
+                    addlength = input('Длина: ')
+                    addcalories = input('Калорийность: ')
+                    shop.AddItem(addtype, name=addname, amount=addamount, calories=addcalories, length=addlength)
 
-    else:
-        print('мимо')
+                elif addtype == '3':
+                    addname = input('Название: ')
+                    addamount = input('Количество: ')
+                    addsize = input('Размер: ')
+                    shop.AddItem(addtype, name=addname, amount=addamount, size=addsize)
+
+                else:
+                    addname = input('Название: ')
+                    addamount = input('Количество: ')
+                    addcalories = input('Калорийность: ')
+                    shop.AddItem(addtype, name=addname, amount=addamount, calories=addcalories)
+
+                print('Успешно добавлено!')
+            except ValueError as e:
+                print(f'Ошибка: {e}')
+
+        case '2':
+            try:
+                if not shop.goods:
+                    print("В магазине нет товаров для удаления")
+                else:
+                    print(shop)
+                    index = int(input('Введите индекс товара для удаления: '))
+                    shop.RemoveItem(index)
+                    print('Удаление прошло успешно!')
+            except (ValueError, IndexError) as e:
+                print(f'Ошибка при удалении: {e}')
+
+        case '3':
+            print(shop)
+
+        case '0':
+            run = False
+            break
+
+        case _:
+            print('Неправильно выбрано действие')
+
+    print('\nНажмите пробел, чтобы продолжить')
+    wait('space')
+    getch()

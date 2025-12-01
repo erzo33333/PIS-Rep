@@ -1,102 +1,75 @@
-from errors import *
 from validation import *
+from pydantic import BaseModel, Field
+from abc import ABC, abstractmethod
 
-class Shop:
-    def __init__(self):
-        self.goods = []
+class Shop(BaseModel):
+    """Модель магазина"""
+    goods:list = Field(default=[], description="Список всех товаров в магазине")
 
-    def __str__(self):
-        return self.goods
+    def AddItem(self, type, **kwargs):
+        """Добавление товара"""
+        types = {'1': Potato,
+                 '2': Carrot,
+                 '3': Berry}
 
-class Product:
-    """
-    Основной класс, отвечающий за неклассифицированные продукты
-    """
-    def __init__(self, name, amount, date, calories):
-        
-        validate_name(name)
-        validate_amount(amount)
-        validate_date(date)
-        validate_calories(calories)
+        if type in types:
+            product_class = types[type]
+        else:
+            product_class = Product
 
-        self.name = name
-        self.date = date
-        self.amount = amount
-        self.calories = calories
+        self.goods.append(product_class(**kwargs))
 
-    def __str__(self):
-        return f'Название: {self.name}, Дата:{self.date}, Количество:{self.amount}, Калорийность: {self.calories}'
-
-
-class Item:
-    """
-    Класс, дублирующий старую версию Product
-    """
-    def __init__(self, name: str, date: str, amount):
-        
-        validate_name(name)
-        validate_amount(amount)
-        validate_date(date)
-
-        self.name = name
-        self.amount = amount
-        self.date = date
+    def RemoveItem(self, index):
+        """Удаление товара по индексу"""
+        if 0 <= index < len(self.goods):
+            self.goods.pop(index)
+        else:
+            raise IndexError("Товар с таким индексом не найден")
 
     def __str__(self):
-        return f'Название: {self.name}, Дата:{self.date}, Количество:{self.amount}'
+        goods_str = 'Список всех товаров в магазине:\n'
+        for i in range(len(self.goods)):
+            goods_str += f'{i}. {self.goods[i]}\n'
+        return f'{goods_str}'
 
-
-class Potato(Product):
-    """
-    Класс картошки, наслдуемый от Product
-    """
-    def __init__(self, name, isdirty, amount, date, calories):
-        
-        validate_name(name)
-        validate_isdirty(isdirty)
-        validate_amount(amount)
-        validate_date(date)
-        validate_calories(calories)
-
-        super().__init__(name, amount, date, calories)
-        self.isdirty = isdirty
+class Product(BaseModel, ProductValidation):
+    """Основная модель, отвечающая за неклассифицированные продукты"""
+    name:str = Field(description="Название продукта")
+    amount: float = Field(description="Количество продукта")
+    calories: int = Field(description="Калорийность продукта")
 
     def __str__(self):
-        return f'Название: {self.name}, Грязь:{self.isdirty}, Дата:{self.date}, Количество:{self.amount}, Калорийность: {self.calories}'
+        return f'Название: {self.name}, Количество:{self.amount}, Калорийность: {self.calories}'
 
 
-class Carrot(Product):
-    """
-    Класс моркови, наслдуемый от Product
-    """
-    def __init__(self, name, length, amount, date, calories):
+class Item(BaseModel, ABC):
+    """Модель, дублирующая старую версию Product"""
+    name:str = Field(description="Название продукта")
+    amount: int = Field(description="Количество продукта")
+    @abstractmethod
+    def __str__(self): pass
 
-        validate_name(name)
-        validate_length(length)
-        validate_amount(amount)
-        validate_date(date)
-        validate_calories(calories)
 
-        super().__init__(name, amount, date, calories)
-        self.length = length
+class Potato(Product, PotatoValidation):
+    """Модель картошки, наслдуемая от Product"""
+
+    isdirty: bool = Field(description="Показатель грязи на картошке")
 
     def __str__(self):
-        return f'Название: {self.name}, Длина:{self.length}, Дата:{self.date}, Количество:{self.amount}, Калорийность: {self.calories}'
+        return f'Название: {self.name}, Грязь:{self.isdirty}, Количество:{self.amount}, Калорийность: {self.calories}'
 
 
-class Berry(Item):
-    """
-    Класс ягоды, наслдуемый от Item
-    """
-    def __init__(self, name, size, amount, date):
-
-        validate_name(name)
-        validate_size(size)
-        validate_amount(amount)
-        validate_date(date)
-
-        super().__init__(name, date, amount)
-        self.size = size
+class Carrot(Product, CarrotValidation):
+    """Модель моркови, наслдуемая от Product"""
+    length: int = Field(description="Длина моркови")
 
     def __str__(self):
-        return f'Название: {self.name}, Дата:{self.date}, Количество: {self.amount}, Размер:{self.size}'
+        return f'Название: {self.name}, Длина:{self.length}, Количество:{self.amount}, Калорийность: {self.calories}'
+
+
+class Berry(Item, BerryValidation):
+    """Модель ягоды, наслдуемая от Item"""
+    size:int = Field(description="Размер ягоды")
+
+    def __str__(self):
+        return f'Название: {self.name}, Количество: {self.amount}, Размер:{self.size}'
