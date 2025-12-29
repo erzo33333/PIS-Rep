@@ -1,27 +1,13 @@
-from classes import Product, Potato, Carrot, Berry, Shop
+"""
+Модуль исполнения программы в иде консольного приложения.
+Рекомендуется запускать в термнале.
+"""
 import os
-from keyboard import wait
 from msvcrt import getch
+from keyboard import wait
+from classes import Shop, Product, Potato, Carrot, Berry
 
 shop = Shop()
-
-ProductList = [{'name': "Баклажан", 'amount':10, 'calories':50},
-               {'name': "Фейхоа", 'amount':3, 'calories':59},
-               {'name': "Огурец", 'amount':320, 'calories':15}]
-
-PotatoList = [{'name': "Красная картошка",'isdirty':True, 'amount':250, 'calories':70},
-              {'name': "Белая картошка", 'isdirty':False, 'amount':300, 'calories':77},
-              {'name': "Синяя картошка", 'isdirty':False, 'amount':50, 'calories':80}]
-
-CarrotList = [{'name': "Анастасия", 'length':23, 'amount':140, 'calories':40},
-              {'name': "Московская Зимняя", 'length':14, 'amount':100, 'calories':39},
-              {'name': "Самсон", 'length':20, 'amount':97, 'calories':42}]
-
-BerryList = [{'name': "Арбуз", 'size':37, 'amount':104},
-             {'name': "Малина", 'size':1, 'amount':22},
-             {'name': "Банан", 'size':20, 'amount':95}]
-
-
 
 run = True
 while run:
@@ -84,7 +70,10 @@ while run:
                 print(f'Ошибка при удалении: {e}')
 
         case '3':
-            print(shop)
+            if not shop.goods:
+                print("В магазине нет товаров")
+            else:
+                print(shop)
 
         case '0':
             run = False

@@ -1,8 +1,10 @@
-# test_suite.py
+"""
+Модуль тестирования всей программы.
+Использует pytest.
+"""
 import pytest
 from classes import Product, Potato, Carrot, Berry, Shop
 from validation import ProductValidation, PotatoValidation, CarrotValidation, BerryValidation
-from errors import FieldMissingError
 
 
 class TestValidation:

@@ -1,5 +1,5 @@
-class FieldMissingError(Exception):
-    """Ошибка: отсутствует обязательное поле словаря."""
-
+"""
+Модуль нестандартных ошибок.
+"""
 class FieldTypeError(Exception):
     """Ошибка: неверный тип поля."""

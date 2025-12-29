@@ -1,26 +1,33 @@
-from validation import *
-from pydantic import BaseModel, Field
+"""
+Модуль, содержащий классы для представления продуктов и магазина.
+Использует pydantic для валидации данных.
+"""
 from abc import ABC, abstractmethod
+from pydantic import BaseModel, Field
+from validation import (
+    ProductValidation,
+    PotatoValidation,
+    CarrotValidation,
+    BerryValidation
+)
 
 class Shop(BaseModel):
-    """Модель магазина"""
-    goods:list = Field(default=[], description="Список всех товаров в магазине")
+    """Модель магазина для управления товарами."""
+    goods: list = Field(default=[], description="Список всех товаров в магазине")
 
-    def AddItem(self, type, **kwargs):
-        """Добавление товара"""
-        types = {'1': Potato,
-                 '2': Carrot,
-                 '3': Berry}
+    def AddItem(self, product_type, **kwargs):
+        """Добавление товара в магазин."""
+        types = {
+            '1': Potato,
+            '2': Carrot,
+            '3': Berry
+        }
 
-        if type in types:
-            product_class = types[type]
-        else:
-            product_class = Product
-
+        product_class = types.get(product_type, Product)
         self.goods.append(product_class(**kwargs))
 
     def RemoveItem(self, index):
-        """Удаление товара по индексу"""
+        """Удаление товара по индексу."""
         if 0 <= index < len(self.goods):
             self.goods.pop(index)
         else:
@@ -28,13 +35,14 @@ class Shop(BaseModel):
 
     def __str__(self):
         goods_str = 'Список всех товаров в магазине:\n'
-        for i in range(len(self.goods)):
-            goods_str += f'{i}. {self.goods[i]}\n'
-        return f'{goods_str}'
+        for i, good in enumerate(self.goods):
+            goods_str += f'{i}. {good}\n'
+        return goods_str
+
 
 class Product(BaseModel, ProductValidation):
-    """Основная модель, отвечающая за неклассифицированные продукты"""
-    name:str = Field(description="Название продукта")
+    """Основная модель, отвечающая за неклассифицированные продукты."""
+    name: str = Field(description="Название продукта")
     amount: float = Field(description="Количество продукта")
     calories: int = Field(description="Калорийность продукта")
 
@@ -43,16 +51,17 @@ class Product(BaseModel, ProductValidation):
 
 
 class Item(BaseModel, ABC):
-    """Модель, дублирующая старую версию Product"""
-    name:str = Field(description="Название продукта")
+    """Абстрактная модель, дублирующая старую версию Product."""
+    name: str = Field(description="Название продукта")
     amount: int = Field(description="Количество продукта")
+
     @abstractmethod
-    def __str__(self): pass
+    def __str__(self):
+        """Абстрактный метод для строкового представления."""
 
 
 class Potato(Product, PotatoValidation):
-    """Модель картошки, наслдуемая от Product"""
-
+    """Модель картошки, наследуемая от Product."""
     isdirty: bool = Field(description="Показатель грязи на картошке")
 
     def __str__(self):
@@ -60,7 +69,7 @@ class Potato(Product, PotatoValidation):
 
 
 class Carrot(Product, CarrotValidation):
-    """Модель моркови, наслдуемая от Product"""
+    """Модель моркови, наследуемая от Product."""
     length: int = Field(description="Длина моркови")
 
     def __str__(self):
@@ -68,8 +77,8 @@ class Carrot(Product, CarrotValidation):
 
 
 class Berry(Item, BerryValidation):
-    """Модель ягоды, наслдуемая от Item"""
-    size:int = Field(description="Размер ягоды")
+    """Модель ягоды, наследуемая от Item."""
+    size: int = Field(description="Размер ягоды")
 
     def __str__(self):
         return f'Название: {self.name}, Количество: {self.amount}, Размер:{self.size}'
